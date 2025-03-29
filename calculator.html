@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Percentage Calculator</title>
+    <style>
+        body {
+            background-color: #FFFF;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #FFFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Investment Percentage Calculator</h1>
+    <p>Enter your investment amount and the initial property value to see the percentage of your investment.</p>
+
+    <label for="investment">Investment Amount ($):</label><br>
+    <input type="number" id="investment" placeholder="Enter amount"><br><br>
+
+    <label for="propertyValue">Initial Property Value ($):</label><br>
+    <input type="number" id="propertyValue" placeholder="Enter property value"><br><br>
+
+    <button onclick="calculatePercentage()">Calculate Percentage</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function calculatePercentage() {
+            var investment = document.getElementById("investment").value;
+            var propertyValue = document.getElementById("propertyValue").value;
+            
+            if (investment && propertyValue) {
+                var percentage = (investment / propertyValue) * 100;
+                document.getElementById("result").innerHTML = "Your investment is " + percentage.toFixed(2) + "% of the initial property value.";
+            } else {
+                document.getElementById("result").innerHTML = "Please enter both values.";
+            }
+        }
+    </script>
+
+</body>
+</html>
